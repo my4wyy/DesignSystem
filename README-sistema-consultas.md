@@ -7,9 +7,20 @@
 
 ---
 
-## 1. Contexto do Sistema
+## 1. Contexto do Sistema e Entendimento do Grupo
 
-### 1.1 Objetivos
+### 1.1 Entendimento do Grupo
+De acordo com o trabalho, o grupo entendeu design system como um conjunto estruturado de elementos visuais e técnicos que garante consistência, responsividade e manutenibilidade na interface do sistema.
+
+A definição prática do grupo é refletida nos seguintes pontos:
+- Responsividade: usaram o design system com Tailwind CSS para garantir adaptação a dispositivos móveis
+- Componentização: construíram componentes em React e documentaram no Storybook
+- Padronização visual: definiram uma paleta de cores, tipografia, tokens de espaçamento e estados de botão bem detalhados
+- Uso centralizado de estilos: os botões, por exemplo, seguem variações visuais definidas (normal, hover, desabilitado) com cores específicas
+
+Isso mostra que o grupo entende o design system não só como um guia visual, mas também como uma base técnica que promove manutenção facilitada, acessibilidade, escalabilidade visual e experiência do usuário unificada.
+
+### 1.2 Objetivos
 
 Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos manuais por:
 
