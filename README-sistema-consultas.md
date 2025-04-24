@@ -32,7 +32,7 @@ Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos 
 
 ### 2.1 Fluxograma de Agendamento
 
-![Fluxograma de Agendamento](./img/fluxograma-agendamento.png)
+![Fluxograma de Agendamento](./img/Fluxograma.png)
 
 ---
 
@@ -42,7 +42,7 @@ Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos 
 
 #### Paleta de Cores
 
-![Paleta de Cores](./img/paleta-de-cores.png)
+![Paleta de Cores](./img/Paleta.png)
 
 #### Tipografia
 
@@ -50,7 +50,10 @@ Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos 
   - Tamanhos: 2.5rem (h1), 2rem (h2)  
 - **Corpo do Texto**: Open Sans (400)  
   - Base: 1rem  
-  - Legendas: 0.875rem  
+  - Legendas: 0.875rem
+  
+  ![Paleta de Cores](./img/Cores2.png)
+
 
 #### Explicação da Seleção de Cores
 
@@ -100,7 +103,10 @@ A paleta de cores escolhida para o sistema de gestão de consultas médicas foi 
   Confirmar Consulta
 </Button>
 ```
-
+  ![Paleta de Cores](./img/Botoes.png)
+  ![Paleta de Cores](./img/Tipografia.png)
+  ![Paleta de Cores](./img/Componnetes.png)
+  
 ---
 
 ### Tokens de Espaçamento
@@ -117,7 +123,7 @@ A paleta de cores escolhida para o sistema de gestão de consultas médicas foi 
 
 ### 4.1 Diagrama de 3 Camadas
 
-![Diagrama de Arquitetura](./img/diagrama-arquitetura.png)
+![Diagrama de Arquitetura](./img/DiagramaDeComponentes.png)
 
 #### Explicação do Diagrama
 
@@ -223,7 +229,7 @@ O sistema segue uma arquitetura em 3 camadas (Frontend, Backend, Banco de Dados)
 
 ### 5.1 DER Completo
 
-![DER Completo](./img/der-completo.png)
+![DER Completo](./img/Dados.png)
 
 ---
 
