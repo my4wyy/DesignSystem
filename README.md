@@ -7,18 +7,12 @@
 
 ---
 
-## 1. Contexto do Sistema e Entendimento do Grupo
+## 1. Contexto do Sistema
 
-### 1.1 Entendimento do Grupo
-De acordo com o trabalho, o grupo entendeu design system como um conjunto estruturado de elementos visuais e técnicos que garante consistência, responsividade e manutenibilidade na interface do sistema.
+### 1.1 Design System 
+Abordando *design system* em um contexto arquitetural, é um sistema estruturado reutilizável que conecta design, desenvolvimento e experiência do usuário de forma coesa e escalável, definindo um conjunto de regras, padrões, componentes e diretrizes que orientam de ponta a ponta do sistema.
 
-A definição prática do grupo é refletida nos seguintes pontos:
-- Responsividade: usaram o design system com Tailwind CSS para garantir adaptação a dispositivos móveis, essencial para que pacientes possam agendar consultas em qualquer dispositivo, principalmente em situações de urgência
-- Componentização: construíram componentes em React e documentaram no Storybook, permitindo rápidas atualizações do sistema conforme novas especialidades médicas ou requisitos regulatórios surjam
-- Padronização visual: definiram uma paleta de cores, tipografia, tokens de espaçamento e estados de botão bem detalhados que refletem a identidade de uma instituição de saúde e transmitem confiança aos pacientes
-- Uso centralizado de estilos: os botões, por exemplo, seguem variações visuais definidas (normal, hover, desabilitado) com cores específicas, garantindo acessibilidade para pacientes de todas as idades
-
-Isso mostra que o grupo entende o design system não só como um guia visual, mas também como uma base técnica que promove manutenção facilitada, acessibilidade, escalabilidade visual e experiência do usuário unificada, cruciais em um sistema onde o erro de interpretação pode ter consequências sérias para a saúde do paciente.
+Portanto, para o sistema Vida+ Saúde, foram selecionados componentes arquiteturais condizentes com os requisitos do sistema em termos de escalabilidade, adaptabilidade, acessibilidade e agilidade. A seguir, são explicados os componentes e sua implicação no contexto do sistema.
 
 ### 1.2 Objetivos
 
@@ -32,10 +26,10 @@ Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos 
 
 | Requisito        | Solução Adotada           | Justificativa                           |
 |------------------|---------------------------|-----------------------------------------|
-| Escalabilidade   | Microserviços             | Preparado para expansão futura da clínica para novas unidades e especialidades |
+| Escalabilidade   | Microsserviços            | Preparado para expansão futura da clínica para novas unidades e especialidades |
 | Segurança        | Spring Security + JWT     | Proteção de dados sensíveis de saúde (LGPD) e prontuários médicos |
-| Responsividade   | Design System + Tailwind  | Adaptação a dispositivos móveis para agendamentos rápidos por pacientes e visualização por médicos em trânsito |
-| Manutenibilidade | React + Storybook         | Facilidade para adicionar novas especialidades médicas e tipos de consulta |
+| Responsividade   | MUI + Tailwind            | Adaptação a dispositivos móveis para agendamentos rápidos por pacientes e visualização por médicos em trânsito |
+| Manutenibilidade | React                     | Facilidade para adicionar novas especialidades médicas e tipos de consulta |
 
 ---
 
@@ -44,7 +38,6 @@ Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos 
 ### 2.1 Fluxograma de Agendamento
 
 ![Fluxograma de Agendamento](./img/Fluxograma.png)
-
 ---
 
 ## 3. Design System Detalhado
@@ -57,18 +50,13 @@ Modernizar o sistema de gestão da clínica Vida+ Saúde substituindo processos 
 
 #### Tipografia
 
-- **Títulos**: Roboto Condensed (700)  
-  - Tamanhos: 2.5rem (h1), 2rem (h2)  
-- **Corpo do Texto**: Open Sans (400)  
-  - Base: 1rem  
-  - Legendas: 0.875rem
-  
-  ![Paleta de Cores](./img/Cores2.png)
-
+- **Títulos**: Poppins (700)  
+- **Corpo do Texto**: Poppins SemiBold (400)  
+- **Auxiliar**: Poppins Regular
 
 #### Explicação da Seleção de Cores
 
-A paleta de cores escolhida para o sistema de gestão de consultas médicas foi cuidadosamente selecionada para transmitir confiança, tranquilidade e profissionalismo, características essenciais em um ambiente de saúde.
+A paleta de cores escolhida para o sistema de gestão de consultas médicas foi selecionada para transmitir confiança, tranquilidade e profissionalismo, características essenciais em um ambiente de saúde.
 
 ##### 1. Primária (#007968 - Verde Água Escuro)
 
@@ -145,14 +133,14 @@ O sistema segue uma arquitetura em 3 camadas (Frontend, Backend, Banco de Dados)
 #### 1. Frontend (React.js)
 
 - **Tecnologias**:  
-  - React: Componentes reutilizáveis como calendários, seletores de horário e cards de médicos  
+  - React + MUI: Componentes responsivos reutilizáveis como calendários, seletores de horário e cards de médicos  
   - Redux: Gerenciamento de estado global para manter consistência entre agendamentos simultâneos  
-  - Tailwind CSS + Storybook: Responsividade e documentação  
+  - Figma: Documentação  
 
 - **Justificativa no contexto médico**:
   - A escolha do Tailwind CSS permite adaptação rápida a diferentes dispositivos, essencial para pacientes que precisam agendar consultas com urgência pelo celular
   - A componentização em React facilita a adição de novas especialidades e tipos de consulta (presencial/telemedicina) sem reescrever o sistema
-  - O Storybook documenta os componentes permitindo que novos desenvolvedores mantenham a consistência visual nas futuras expansões da clínica
+  - O Figma documenta os componentes e telas permitindo que novos desenvolvedores mantenham a consistência visual nas futuras expansões da clínica
 
 - **Ligações Internas**:  
   - Componentes consomem dados via API REST  
