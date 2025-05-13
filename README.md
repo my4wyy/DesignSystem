@@ -189,7 +189,9 @@ O sistema segue uma arquitetura em 3 camadas (Frontend, Backend, Banco de Dados)
   - JDBC para PostgreSQL  
   - Drivers nativos para MongoDB
 
-#### Arquitetura de Microserviços Detalhada
+### Arquitetura de Microserviços Detalhada
+
+![Microsserviços](./img/microsservicos.jpeg)
 
 A escolha por microserviços baseia-se na necessidade de flexibilidade, escalabilidade e manutenção independente de cada aspecto do sistema médico. Nossa arquitetura é composta pelos seguintes microserviços:
 
