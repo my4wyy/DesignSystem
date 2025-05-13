@@ -197,27 +197,30 @@ A escolha por microserviços baseia-se na necessidade de flexibilidade, escalabi
 
 1. **Serviço de Agendamento**:
    - **Responsabilidades**: Gestão de calendários, validação de disponibilidade, confirmação de consultas
-   - **Tecnologias específicas**: Spring Scheduler, Cache Redis para horários mais buscados
+   - **Tecnologias específicas**: JPA, Cache Redis para horários mais buscados, JWT para autenticação
    - **Escalabilidade**: Escalado horizontalmente em períodos de campanha de saúde
 
-2. **Serviço de Prontuário**:
-   - **Responsabilidades**: Armazenamento e recuperação de histórico médico, anexos e exames
-   - **Tecnologias específicas**: Armazenamento criptografado, políticas rigorosas de acesso
-   - **Conformidade**: Implementação específica para LGPD e CFM (Conselho Federal de Medicina)
+2. **Serviço de Cliente**:
+   - **Responsabilidades**: Cadastro e gerenciamento de clientes/pacientes.
+   - **Tecnologias específicas**: Armazenamento criptografado, políticas rigorosas de acesso e comunicação via HTTP + JSON.
+   - **Conformidade**: Implementação específica para LGPD, CFM (Conselho Federal de Medicina).
 
-3. **Serviço de Notificações**:
-   - **Responsabilidades**: Envio de lembretes, confirmações e reagendamentos
-   - **Tecnologias específicas**: Apache Kafka para filas de mensagens, templates personalizados por especialidade
+3. **Serviço de Médico**:
+   - **Responsabilidades**: Envio de lembretes, confirmações, reagendamentos e gerência de informações gerais de médicos
+   - **Tecnologias específicas**: RabbitMQ para filas de mensagens, templates personalizados por especialidade, comunicação JSON e persistência com JPA.
    - **Canais**: Email, SMS e WhatsApp conforme preferência do paciente
 
-4. **Serviço de Faturamento**:
-   - **Responsabilidades**: Integração com convênios, geração de recibos, controle de pagamentos
-   - **Tecnologias específicas**: Integração com gateways de pagamento e sistemas de convênios médicos
-   - **Automações**: Geração de guias TISS para reembolso de convênios
-
-5. **API Gateway**:
-   - **Responsabilidades**: Roteamento, autenticação centralizada, rate limiting
-   - **Tecnologias específicas**: Spring Cloud Gateway, Resilience4j para circuit breaking
+4. **Serviço de Atendente**:
+   - **Responsabilidades**: Integração com convênios, gerência de dados e operações relacionadas a atendentes.
+   - **Tecnologias específicas**: Persistência via JPA em banco de dados próprio.
+    
+5. **Serviço de Histórico Médico**:
+   - **Responsabilidades**: Armazenamento e recuperação de histórico médico, anexos e exames
+   - **Tecnologias específicas**: Acesso seguro via token JWT e persistência isolada com JPA.
+  
+6. **API Gateway**:
+   - **Responsabilidades**: Ponto único de entrada para o sistema.
+   - **Funcionamento**: Redireciona requisições para os serviços corretos e aplica políticas de segurança e controle de tráfego.
    - **Segurança**: Centralização de políticas de JWT e controle de acesso por perfil
 
 Esta abordagem permite que cada serviço evolua independentemente - por exemplo, podemos atualizar regras de faturamento sem afetar o sistema de agendamento, ou escalar apenas o serviço de notificações durante campanhas de vacinação.
