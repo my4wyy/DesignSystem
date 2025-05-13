@@ -325,7 +325,7 @@ Esta abordagem CQRS proporciona o melhor dos dois mundos: integridade transacion
 
 ### 5.1 DER Completo
 
-![DER Completo](./img/Dados.png)
+![DER Completo](./img/diagrama01.jpg)
 
 ---
 
